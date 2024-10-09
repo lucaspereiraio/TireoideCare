@@ -58,7 +58,7 @@ export const validateRegistration = (
     errors.email = emailError;
   }
 
-  const passwordError = validateEmail(password);
+  const passwordError = validatePassword(password);
   if (passwordError) {
     errors.password = passwordError;
   }
