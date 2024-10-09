@@ -20,11 +20,13 @@ const Register = () => {
       </h1>
       <form className=" w-full md:w-1/4 flex flex-col items-center gap-y-4">
         {/* <div className="w-full flex flex-col gap-y-2">
-          <label htmlFor="name">Nome</label>
+          <label className="text-sm text-neuters-gray-70" htmlFor="name">Nome</label>
           <input className="border border-neuters-gray-70 border-opacity-50 rounded-lg h-11 px-4 focus:outline-none focus:border-primary-100 focus:ring-1 focus:ring-primary-100" id="name" type="name" placeholder="Digite seu nome" />
         </div> */}
         <div className="w-full flex flex-col gap-y-2">
-          <label htmlFor="email">Email</label>
+          <label className="text-sm text-neuters-gray-70" htmlFor="email">
+            Email
+          </label>
           <input
             className="border border-neuters-gray-70 border-opacity-50 rounded-lg h-11 px-4 focus:outline-none focus:border-primary-100 focus:ring-1 focus:ring-primary-100"
             id="email"
@@ -33,7 +35,9 @@ const Register = () => {
           />
         </div>
         <div className="w-full flex flex-col gap-y-2">
-          <label htmlFor="password">Senha</label>
+          <label className="text-sm text-neuters-gray-70" htmlFor="password">
+            Senha
+          </label>
           <input
             className="border border-neuters-gray-70 border-opacity-50 rounded-lg h-11 px-4 focus:outline-none focus:border-primary-100 focus:ring-1 focus:ring-primary-100"
             id="password"
@@ -42,7 +46,7 @@ const Register = () => {
           />
         </div>
         {/* <div className="w-full flex flex-col gap-y-2">
-          <label htmlFor="confirmPassword">Confirme a sua senha</label>
+          <label className="text-sm text-neuters-gray-70" htmlFor="confirmPassword">Confirme a sua senha</label>
           <input className="border border-neuters-gray-70 border-opacity-50 rounded-lg h-11 px-4 focus:outline-none focus:border-primary-100 focus:ring-1 focus:ring-primary-100"
             id="confirmPassword"
             type="password"
