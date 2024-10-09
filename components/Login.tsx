@@ -13,6 +13,7 @@ const Login = () => {
           <label htmlFor="password">Senha</label>
           <input id="password" type="password" placeholder="Digite sua senha" />
         </div>
+        <a href="/recovery">Esqueceu sua senha?</a>
         <button>Login</button>
       </form>
       <p>
