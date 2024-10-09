@@ -1,3 +1,6 @@
+"use client";
+
+import { validateLogin } from "@/utils/validators";
 import React, { useState } from "react";
 
 const Login = () => {
@@ -6,10 +9,22 @@ const Login = () => {
     {}
   );
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    const validationErrors = validateLogin(formData.email, formData.password);
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors);
+      return;
+    }
+
+    window.alert("Login bem-sucedido!");
+  };
+
   return (
     <section>
       <h1>Login</h1>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">Email</label>
           <input
@@ -17,7 +32,11 @@ const Login = () => {
             type="email"
             placeholder="Digite seu email"
             value={formData.email}
+            onChange={(e) =>
+              setFormData({ ...formData, email: e.target.value })
+            }
           />
+          {errors.email && <p>{errors.email}</p>}
         </div>
         <div>
           <label htmlFor="password">Senha</label>
@@ -26,7 +45,11 @@ const Login = () => {
             type="password"
             placeholder="Digite sua senha"
             value={formData.password}
+            onChange={(e) =>
+              setFormData({ ...formData, password: e.target.value })
+            }
           />
+          {errors.password && <p>{errors.password}</p>}
         </div>
         <a href="/recovery">Esqueceu sua senha?</a>
         <button type="submit">Login</button>
