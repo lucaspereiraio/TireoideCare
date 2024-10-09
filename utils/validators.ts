@@ -36,6 +36,40 @@ export const validateLogin = (email: string, password: string) => {
   return errors;
 };
 
+export const validateRegistration = (
+  name: string,
+  email: string,
+  password: string,
+  confirmPassword: string
+) => {
+  const errors: {
+    name?: string;
+    email?: string;
+    password?: string;
+    confirmPassword?: string;
+  } = {};
+
+  if (!name.trim()) {
+    errors.name = "O nome é obrigatório.";
+  }
+
+  const emailError = validateEmail(email);
+  if (emailError) {
+    errors.email = emailError;
+  }
+
+  const passwordError = validateEmail(password);
+  if (passwordError) {
+    errors.password = passwordError;
+  }
+
+  if (password !== confirmPassword) {
+    errors.confirmPassword = "As senhas não coincidem.";
+  }
+
+  return errors;
+};
+
 // export const validateRegistration = (
 //   name: string,
 //   email: string,
