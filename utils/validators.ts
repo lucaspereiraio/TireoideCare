@@ -1,3 +1,14 @@
+//Name validation function
+const validateName = (name: string) => {
+  const nameRegex = /^[A-Za-z\s]+$/;
+
+  if (!name.trim()) {
+    return "O nome é obrigatório.";
+  } else if (!nameRegex.test(name)) {
+    return "Nome inválido.";
+  }
+};
+
 // Email validation function
 const validateEmail = (email: string) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -49,8 +60,9 @@ export const validateRegistration = (
     confirmPassword?: string;
   } = {};
 
-  if (!name.trim()) {
-    errors.name = "O nome é obrigatório.";
+  const nameError = validateName(name);
+  if (nameError) {
+    errors.name = nameError;
   }
 
   const emailError = validateEmail(email);
@@ -69,10 +81,3 @@ export const validateRegistration = (
 
   return errors;
 };
-
-// export const validateRegistration = (
-//   name: string,
-//   email: string,
-//   password: string,
-//   confirmpassword: string
-// ) => {};

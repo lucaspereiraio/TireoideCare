@@ -1,7 +1,7 @@
 "use client";
 
 import { validateLogin } from "@/utils/validators";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -19,6 +19,16 @@ const Login = () => {
     }
 
     window.alert("Login bem-sucedido!");
+    console.log("Email", formData.email);
+    console.log("Password", formData.password);
+  };
+
+  const handleEmail = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, email: e.target.value });
+  };
+
+  const handlePassword = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, password: e.target.value });
   };
 
   return (
@@ -29,12 +39,10 @@ const Login = () => {
           <label htmlFor="email">Email</label>
           <input
             id="email"
-            type="email"
+            // type="email"
             placeholder="Digite seu email"
             value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
+            onChange={handleEmail}
           />
           {errors.email && <p>{errors.email}</p>}
         </div>
@@ -45,9 +53,7 @@ const Login = () => {
             type="password"
             placeholder="Digite sua senha"
             value={formData.password}
-            onChange={(e) =>
-              setFormData({ ...formData, password: e.target.value })
-            }
+            onChange={handlePassword}
           />
           {errors.password && <p>{errors.password}</p>}
         </div>

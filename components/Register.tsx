@@ -1,7 +1,7 @@
 "use client";
 
 import { validateRegistration } from "@/utils/validators";
-import React, { useState } from "react";
+import React, { ChangeEvent, useState } from "react";
 
 const Register = () => {
   const [formData, setFormData] = useState({
@@ -32,6 +32,25 @@ const Register = () => {
     }
 
     window.alert("Cadastro bem-sucedido!");
+    console.log("Name", formData.name);
+    console.log("Email", formData.email);
+    console.log("Password", formData.password);
+  };
+
+  const handleName = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, name: e.target.value });
+  };
+
+  const handleEmail = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, email: e.target.value });
+  };
+
+  const handlePassword = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, password: e.target.value });
+  };
+
+  const handleConfirmPassword = (e: ChangeEvent<HTMLInputElement>) => {
+    setFormData({ ...formData, confirmPassword: e.target.value });
   };
 
   return (
@@ -45,7 +64,7 @@ const Register = () => {
             type="name"
             placeholder="Digite seu nome"
             value={formData.name}
-            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+            onChange={handleName}
           />
           {errors.name && <p>{errors.name}</p>}
         </div>
@@ -53,12 +72,10 @@ const Register = () => {
           <label htmlFor="email">Email</label>
           <input
             id="email"
-            type="email"
+            // type="email"
             placeholder="Digite seu email"
             value={formData.email}
-            onChange={(e) =>
-              setFormData({ ...formData, email: e.target.value })
-            }
+            onChange={handleEmail}
           />
           {errors.email && <p>{errors.email}</p>}
         </div>
@@ -69,9 +86,7 @@ const Register = () => {
             type="password"
             placeholder="Digite sua senha"
             value={formData.password}
-            onChange={(e) =>
-              setFormData({ ...formData, password: e.target.value })
-            }
+            onChange={handlePassword}
           />
           {errors.password && <p>{errors.password}</p>}
         </div>
@@ -82,16 +97,14 @@ const Register = () => {
             type="password"
             placeholder="Confirme a sua senha"
             value={formData.confirmPassword}
-            onChange={(e) =>
-              setFormData({ ...formData, confirmPassword: e.target.value })
-            }
+            onChange={handleConfirmPassword}
           />
           {errors.confirmPassword && <p>{errors.confirmPassword}</p>}
         </div>
         <button type="submit">Cadastrar</button>
       </form>
       <p>
-        Já tem uma conta? <a href="/login">Cadastre-se</a>
+        Já tem uma conta? <a href="/login">Acessar</a>
       </p>
     </section>
   );
