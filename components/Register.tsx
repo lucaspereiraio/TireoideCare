@@ -124,7 +124,7 @@ const Register = () => {
           type="submit"
           className="rounded-xl w-40 h-11 bg-primary-100 text-neuters-gray-20 my-4 font-semibold"
         >
-          Entrar
+          Cadastrar
         </button>
       </form>
 
