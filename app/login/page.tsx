@@ -3,8 +3,8 @@ import React from "react";
 //Components
 import Login from "@/components/Login";
 
-const login = () => {
+const LoginPage = () => {
   return <Login />;
 };
 
-export default login;
+export default LoginPage;
