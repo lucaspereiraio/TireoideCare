@@ -16,11 +16,10 @@ const Recovery = () => {
     const emailError = validateEmail(email);
     if (emailError) {
       setMessage(emailError);
-    } else if (!email.trim()) {
-      // CONDIÇÃO DEVE SER DE LÓGICA DO BACKEND
-      setMessage("Este email não está cadastrado.");
     } else {
-      setMessage("Um link de recuperação foi enviado ao seu email");
+      setMessage(
+        "Caso o email esteja cadastrado em nosso banco de dados um link de recuperação de senha foi enviado ao seu email."
+      );
     }
   };
 
