@@ -1,9 +1,8 @@
-import React from 'react'
+import Recovery from "@/components/Recovery";
+import React from "react";
 
 const RecoveryPage = () => {
-  return (
-    <div>page</div>
-  )
-}
+  return <Recovery />;
+};
 
 export default RecoveryPage;

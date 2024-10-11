@@ -10,7 +10,7 @@ const validateName = (name: string) => {
 };
 
 // Email validation function
-const validateEmail = (email: string) => {
+export const validateEmail = (email: string) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!email.trim()) {
     return "O email é obrigatório.";
@@ -21,7 +21,7 @@ const validateEmail = (email: string) => {
 };
 
 // Password validation function
-const validatePassword = (password: string) => {
+export const validatePassword = (password: string) => {
   if (!password.trim()) {
     return "A senha é obrigatória.";
   } else if (password.length < 6) {
