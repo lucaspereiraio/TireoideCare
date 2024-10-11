@@ -3,8 +3,8 @@ import React from "react";
 //Components
 import Register from "@/components/Register";
 
-const register = () => {
+const RegisterPage = () => {
   return <Register />;
 };
 
-export default register;
+export default RegisterPage;

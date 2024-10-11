@@ -1,5 +1,16 @@
+//Name validation function
+const validateName = (name: string) => {
+  const nameRegex = /^[A-Za-z\s]+$/;
+
+  if (!name.trim()) {
+    return "O nome é obrigatório.";
+  } else if (!nameRegex.test(name)) {
+    return "Nome inválido.";
+  }
+};
+
 // Email validation function
-const validateEmail = (email: string) => {
+export const validateEmail = (email: string) => {
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!email.trim()) {
     return "O email é obrigatório.";
@@ -10,7 +21,7 @@ const validateEmail = (email: string) => {
 };
 
 // Password validation function
-const validatePassword = (password: string) => {
+export const validatePassword = (password: string) => {
   if (!password.trim()) {
     return "A senha é obrigatória.";
   } else if (password.length < 6) {
@@ -36,9 +47,37 @@ export const validateLogin = (email: string, password: string) => {
   return errors;
 };
 
-// export const validateRegistration = (
-//   name: string,
-//   email: string,
-//   password: string,
-//   confirmpassword: string
-// ) => {};
+export const validateRegistration = (
+  name: string,
+  email: string,
+  password: string,
+  confirmPassword: string
+) => {
+  const errors: {
+    name?: string;
+    email?: string;
+    password?: string;
+    confirmPassword?: string;
+  } = {};
+
+  const nameError = validateName(name);
+  if (nameError) {
+    errors.name = nameError;
+  }
+
+  const emailError = validateEmail(email);
+  if (emailError) {
+    errors.email = emailError;
+  }
+
+  const passwordError = validatePassword(password);
+  if (passwordError) {
+    errors.password = passwordError;
+  }
+
+  if (password !== confirmPassword) {
+    errors.confirmPassword = "As senhas não coincidem.";
+  }
+
+  return errors;
+};
