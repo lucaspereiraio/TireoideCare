@@ -31,7 +31,12 @@ const Register = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
+    mode: "onChange",
+    reValidateMode: "onChange",
+    shouldFocusError: true,
   });
+
+  console.log(errors, "errors");
 
   const onSubmit = (data: any) => {
     console.log(data);

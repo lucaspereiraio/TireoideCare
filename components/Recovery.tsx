@@ -23,10 +23,13 @@ const Recovery = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
+    mode: "onChange",
+    reValidateMode: "onChange",
+    shouldFocusError: true,
   });
 
   const onSubmit = (data: any) => {
-    console.log("Formulário enviado:", data); 
+    console.log("Formulário enviado:", data);
   };
 
   return (

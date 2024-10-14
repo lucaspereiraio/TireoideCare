@@ -28,6 +28,9 @@ const Redefinition = () => {
     formState: { errors },
   } = useForm({
     resolver: yupResolver(schema),
+    mode: "onChange",
+    reValidateMode: "onChange",
+    shouldFocusError: true,
   });
 
   const onSubmit = (data: any) => {

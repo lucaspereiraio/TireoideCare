@@ -33,8 +33,10 @@ const InputField: React.FC<InputFieldProps> = ({
             id={name}
             type={type}
             placeholder={placeholder}
-            className={`border ${
-              errorMessage ? "border-red-500" : "border-neuters-gray-70"
+            className={`border border-neuters-gray-70 ${
+              errorMessage
+                ? "border-red-500 focus:border-red-500 focus:ring-red-500"
+                : " focus:border-primary-100 focus:ring-primary-100"
             } border-opacity-50 rounded-lg h-11 px-4 focus:outline-none focus:border-primary-100 focus:ring-1 focus:ring-primary-100`}
           />
         )}
