@@ -79,7 +79,7 @@ const Login = () => {
           >
             <Image
               src="/images/google.svg"
-              alt="Logo TireoideCare"
+              alt="Logo Google"
               width={24}
               height={24}
             />
@@ -91,7 +91,7 @@ const Login = () => {
           >
             <Image
               src="/images/apple.svg"
-              alt="Logo TireoideCare"
+              alt="Logo Apple"
               width={24}
               height={24}
             />
