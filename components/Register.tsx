@@ -67,6 +67,7 @@ const Register = () => {
           type="password"
           placeholder="Digite sua senha"
           errorMessage={errors.password?.message}
+          isPassword={true}
         />
 
         <Button className="mt-4" type="submit">

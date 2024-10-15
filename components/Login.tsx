@@ -58,6 +58,7 @@ const Login = () => {
           type="password"
           placeholder="Digite sua senha"
           errorMessage={errors.password?.message}
+          isPassword={true}
         />
         <div className="w-full text-end text-sm">
           <a
