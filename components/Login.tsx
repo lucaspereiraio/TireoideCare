@@ -15,7 +15,11 @@ const schema = yup.object().shape({
     .string()
     .email("Digite um email válido")
     .required("Email é obrigatório"),
-  password: yup.string().required("Senha é obrigatória"),
+  password: yup
+    .string()
+    // .min(6, "Senha inválida")
+    // .max(100, "Senha inválida")
+    .required("Senha é obrigatória"),
 });
 
 const Login = () => {
