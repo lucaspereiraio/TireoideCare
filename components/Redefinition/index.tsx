@@ -55,6 +55,7 @@ const Redefinition = () => {
           placeholder="Digite sua nova senha"
           type="password"
           errorMessage={errors.newPassword?.message}
+          isPassword={true}
         />
         <InputField
           control={control}
@@ -63,6 +64,7 @@ const Redefinition = () => {
           placeholder="Digite sua nova senha"
           type="password"
           errorMessage={errors.confirmPassword?.message}
+          isPassword={true}
         />
 
         <Button className="mt-4" type="submit">
