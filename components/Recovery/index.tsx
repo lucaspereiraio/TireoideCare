@@ -4,10 +4,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Title from "./Title";
-import Logo from "./Logo";
-import InputField from "./Input";
-import Button from "./Button";
+import Title from "../Title";
+import Logo from "../Logo";
+import InputField from "../Input";
+import Button from "../Button";
 
 const schema = yup.object().shape({
   email: yup

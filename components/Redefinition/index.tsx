@@ -4,10 +4,10 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import InputField from "./Input";
-import Logo from "./Logo";
-import Title from "./Title";
-import Button from "./Button";
+import InputField from "../Input";
+import Logo from "../Logo";
+import Title from "../Title";
+import Button from "../Button";
 import { toast } from "react-toastify";
 
 const schema = yup.object().shape({

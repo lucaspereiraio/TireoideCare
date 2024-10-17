@@ -1,15 +1,15 @@
 "use client";
 
 import Image from "next/image";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Title from "./Title";
-import Button from "./Button";
-import Logo from "./Logo";
-import InputField from "./Input";
+import Title from "../Title";
+import Button from "../Button";
+import Logo from "../Logo";
+import InputField from "../Input";
 
 const schema = yup.object().shape({
   email: yup
@@ -24,7 +24,7 @@ const schema = yup.object().shape({
 });
 
 const Register = () => {
-  // const router = useRouter();
+  const router = useRouter();
 
   const {
     control,
@@ -41,6 +41,7 @@ const Register = () => {
 
   const onSubmit = (data: any) => {
     console.log(data);
+    router.push("/home");
   };
 
   return (

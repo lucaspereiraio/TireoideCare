@@ -1,13 +1,14 @@
 "use client";
 
 import React from "react";
-import InputField from "./Input";
+import { useRouter } from "next/navigation";
+import InputField from "../Input";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Logo from "./Logo";
-import Title from "./Title";
-import Button from "./Button";
+import Logo from "../Logo";
+import Title from "../Title";
+import Button from "../Button";
 import Image from "next/image";
 
 const schema = yup.object().shape({
@@ -23,6 +24,8 @@ const schema = yup.object().shape({
 });
 
 const Login = () => {
+  const router = useRouter();
+
   const {
     control,
     handleSubmit,
@@ -36,6 +39,7 @@ const Login = () => {
 
   const onSubmit = (data: any) => {
     console.log(data);
+    router.push("/home");
   };
 
   return (
