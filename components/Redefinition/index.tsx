@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useRouter } from "next/navigation";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import InputField from "../Input";
@@ -22,6 +23,8 @@ const schema = yup.object().shape({
 });
 
 const Redefinition = () => {
+  const router = useRouter();
+
   const {
     control,
     handleSubmit,
@@ -35,8 +38,10 @@ const Redefinition = () => {
 
   const onSubmit = (data: any) => {
     console.log(data);
-
-    toast.success("Senha redefinida com sucesso!");
+    toast.success("Senha redefinida com sucesso!", { autoClose: 3000 });
+    setTimeout(() => {
+      router.push("/home");
+    }, 3000);
   };
 
   return (
