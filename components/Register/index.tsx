@@ -10,6 +10,7 @@ import Title from "../Title";
 import Button from "../Button";
 import Logo from "../Logo";
 import InputField from "../Input";
+import { toast } from "react-toastify";
 
 const schema = yup.object().shape({
   email: yup
@@ -41,7 +42,10 @@ const Register = () => {
 
   const onSubmit = (data: any) => {
     console.log(data);
-    router.push("/home");
+    toast.success("Usuário cadastrado com sucesso!", { autoClose: 3000 });
+    setTimeout(() => {
+      router.push("/home");
+    }, 3000);
   };
 
   return (
